@@ -104,7 +104,7 @@ public protocol EVReflectable: class, NSObjectProtocol  {
      
      - returns: True if the objects are the same, otherwise false.
      */
-    static func ==(lhs: EVReflectable, rhs: EVReflectable) -> Bool
+    // static func ==(lhs: EVReflectable, rhs: EVReflectable) -> Bool
     
     /**
      Delclaration for Equatable !=
@@ -114,7 +114,7 @@ public protocol EVReflectable: class, NSObjectProtocol  {
      
      - returns: False if the objects are the the same, otherwise true.
      */
-    static func !=(lhs: EVReflectable, rhs: EVReflectable) -> Bool
+    //  static func !=(lhs: EVReflectable, rhs: EVReflectable) -> Bool
     
     /**
      Protocol container property for the reflection statusses

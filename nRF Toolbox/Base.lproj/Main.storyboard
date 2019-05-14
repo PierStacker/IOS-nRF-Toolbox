@@ -1,20 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="WcK-ur-5nd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="WcK-ur-5nd">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="TrebuchetMS.ttf">
-            <string>TrebuchetMS</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Navigation Controller-->
         <scene sceneID="rD0-3r-PUF">
@@ -65,7 +58,7 @@
         <!--User Files-->
         <scene sceneID="dHY-vd-u7x">
             <objects>
-                <viewController id="Qad-SN-gjU" customClass="NORUserFilesViewController" customModule="nRF_Toolbox" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Qad-SN-gjU" customClass="NORUserFilesViewController" customModule="CAU_Toolbox" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qdZ-0F-Lf6"/>
                         <viewControllerLayoutGuide type="bottom" id="jKb-H1-tML"/>
@@ -176,7 +169,7 @@
         <!--Main View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" userLabel="Main View Controller" customClass="NORMainViewController" customModule="nRF_Toolbox" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" userLabel="Main View Controller" customClass="NORMainViewController" customModule="CAU_Toolbox" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kCy-5r-eaC"/>
                         <viewControllerLayoutGuide type="bottom" id="q8e-9n-mBr"/>
@@ -185,7 +178,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="551"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackgroundTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Rv9-E3-Iiv">
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackgroundTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Rv9-E3-Iiv">
                                 <rect key="frame" x="127.5" y="529" width="120" height="14"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="14" id="MRh-hE-ZmY"/>
@@ -209,7 +202,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="78" height="95"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Csb-VN-LzD">
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Csb-VN-LzD">
                                                     <rect key="frame" x="0.0" y="0.0" width="78" height="78"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" image="FeatureBGM" backgroundImage="FeatureBackground"/>
@@ -236,7 +229,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="78" height="95"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nil-h4-bxV">
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nil-h4-bxV">
                                                     <rect key="frame" x="0.0" y="0.0" width="78" height="78"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" image="FeatureBPM" backgroundImage="FeatureBackground"/>
@@ -263,7 +256,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="78" height="95"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qow-gh-9At" userLabel="Button ">
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qow-gh-9At" userLabel="Button ">
                                                     <rect key="frame" x="0.0" y="1" width="78" height="78"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" image="FeatureCSC" backgroundImage="FeatureBackground"/>
@@ -290,7 +283,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="78" height="95"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tM4-vU-BpP">
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tM4-vU-BpP">
                                                     <rect key="frame" x="0.0" y="1" width="78" height="78"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" image="FeatureDFU" backgroundImage="FeatureBackground"/>
@@ -344,7 +337,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="78" height="95"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eDh-ma-wCW" userLabel="Button ">
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eDh-ma-wCW" userLabel="Button ">
                                                     <rect key="frame" x="0.0" y="0.0" width="78" height="78"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" image="FeatureHTS" backgroundImage="FeatureBackground"/>
@@ -371,7 +364,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="78" height="95"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aBC-x8-eEs">
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aBC-x8-eEs">
                                                     <rect key="frame" x="0.0" y="0.0" width="78" height="78"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" image="FeatureProximity" backgroundImage="FeatureBackground"/>
@@ -398,7 +391,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="78" height="95"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kgq-wn-z2R" userLabel="Button ">
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kgq-wn-z2R" userLabel="Button ">
                                                     <rect key="frame" x="0.0" y="0.0" width="78" height="78"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" image="FeatureRSAC" backgroundImage="FeatureBackground"/>
@@ -425,7 +418,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="78" height="95"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MEj-E9-JbH">
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MEj-E9-JbH">
                                                     <rect key="frame" x="0.0" y="0.0" width="78" height="78"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" image="FeatureUART" backgroundImage="FeatureBackground"/>
@@ -452,7 +445,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="78" height="95"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VF3-Ob-yyk">
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VF3-Ob-yyk">
                                                     <rect key="frame" x="0.0" y="0.0" width="78" height="78"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" image="FeatureCGM" backgroundImage="FeatureBackground"/>
@@ -479,7 +472,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="78" height="95"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Plq-6x-mnA">
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Plq-6x-mnA">
                                                     <rect key="frame" x="0.0" y="0.0" width="78" height="78"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" image="FeatureHomeKit" backgroundImage="FeatureBackground"/>
@@ -544,9 +537,9 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="nRF Toolbox" id="O0a-sh-2l2">
+                    <navigationItem key="navigationItem" title="CAU Toolbox" id="O0a-sh-2l2">
                         <barButtonItem key="backBarButtonItem" title="Back" id="lGw-te-Jv2"/>
-                        <barButtonItem key="rightBarButtonItem" image="ic_info" landscapeImage="ic_info" id="aYH-F1-i3A" userLabel="About">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" image="ic_info" landscapeImage="ic_info" id="aYH-F1-i3A" userLabel="About">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="aboutButtonTapped:" destination="vXZ-lx-hvc" id="i5E-s3-uTC"/>
@@ -564,7 +557,7 @@
         <!--View Controller - BGM-->
         <scene sceneID="hgy-MS-kOD">
             <objects>
-                <viewController id="K6D-kg-QBM" userLabel="View Controller - BGM" customClass="NORBGMViewController" customModule="nRF_Toolbox" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="K6D-kg-QBM" userLabel="View Controller - BGM" customClass="NORBGMViewController" customModule="CAU_Toolbox" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PQi-Fb-Vh9"/>
                         <viewControllerLayoutGuide type="bottom" id="4Yk-Uu-b8k"/>
@@ -641,7 +634,7 @@
                                 <color key="separatorColor" red="0.73333334922790527" green="0.74117648601531982" blue="0.75294119119644165" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BGMCell" id="EMf-0w-QHD" customClass="NORBGMItemCell" customModule="nRF_Toolbox" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BGMCell" id="EMf-0w-QHD" customClass="NORBGMItemCell" customModule="CAU_Toolbox" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="22" width="310" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EMf-0w-QHD" id="esg-YP-CNM">
@@ -784,7 +777,7 @@
         <!--Details View Controller-->
         <scene sceneID="7EN-LX-8Kn">
             <objects>
-                <viewController id="Tpl-nT-cEd" customClass="NORBGMDetailsViewController" customModule="nRF_Toolbox" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Tpl-nT-cEd" customClass="NORBGMDetailsViewController" customModule="CAU_Toolbox" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2O2-Yp-oHF"/>
                         <viewControllerLayoutGuide type="bottom" id="iY1-5x-29b"/>
@@ -1429,7 +1422,7 @@
         <!--View Controller - BPM-->
         <scene sceneID="knE-KG-ydc">
             <objects>
-                <viewController id="Kc0-JV-b23" userLabel="View Controller - BPM" customClass="NORBPMViewController" customModule="nRF_Toolbox" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Kc0-JV-b23" userLabel="View Controller - BPM" customClass="NORBPMViewController" customModule="CAU_Toolbox" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="t49-Lz-Q8D"/>
                         <viewControllerLayoutGuide type="bottom" id="sNc-AL-Dhs"/>
@@ -1747,7 +1740,7 @@
         <!--View Controller - CSC-->
         <scene sceneID="Z21-8S-DTi">
             <objects>
-                <viewController id="VtK-t5-9C8" userLabel="View Controller - CSC" customClass="NORCSCViewController" customModule="nRF_Toolbox" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="VtK-t5-9C8" userLabel="View Controller - CSC" customClass="NORCSCViewController" customModule="CAU_Toolbox" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7BR-8S-FDa"/>
                         <viewControllerLayoutGuide type="bottom" id="TQh-CG-dnp"/>
@@ -2010,7 +2003,7 @@
         <!--View Controller - DFU-->
         <scene sceneID="jQp-94-O02">
             <objects>
-                <viewController storyboardIdentifier="DFUViewController" id="ZfZ-xR-bsT" userLabel="View Controller - DFU" customClass="NORDFUViewController" customModule="nRF_Toolbox" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DFUViewController" id="ZfZ-xR-bsT" userLabel="View Controller - DFU" customClass="NORDFUViewController" customModule="CAU_Toolbox" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qcu-dM-eMJ"/>
                         <viewControllerLayoutGuide type="bottom" id="MKQ-HG-7CT"/>
@@ -2110,7 +2103,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d1Z-zS-eN7">
-                                        <rect key="frame" x="111.5" y="92" width="88" height="30"/>
+                                        <rect key="frame" x="111" y="92" width="88" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="M1h-hh-C7S"/>
                                             <constraint firstAttribute="width" constant="88" id="z3c-2M-gyh"/>
@@ -2201,7 +2194,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PVI-T9-QmJ">
-                                        <rect key="frame" x="130.5" y="8" width="50" height="30"/>
+                                        <rect key="frame" x="130" y="8" width="50" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="4L4-zP-3Wt"/>
                                             <constraint firstAttribute="width" constant="50" id="LHm-vh-7cL"/>
@@ -2309,7 +2302,7 @@
         <!--View Controller - HRM-->
         <scene sceneID="6tG-wn-seY">
             <objects>
-                <viewController id="9ph-JI-A6G" userLabel="View Controller - HRM" customClass="NORHRMViewController" customModule="nRF_Toolbox" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9ph-JI-A6G" userLabel="View Controller - HRM" customClass="NORHRMViewController" customModule="CAU_Toolbox" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="I7e-jZ-VCG"/>
                         <viewControllerLayoutGuide type="bottom" id="ZOG-d7-lZz"/>
@@ -2463,7 +2456,7 @@
         <!--View Controller - Proximity-->
         <scene sceneID="7za-bA-dBb">
             <objects>
-                <viewController id="inG-0b-px5" userLabel="View Controller - Proximity" customClass="NORProximityViewController" customModule="nRF_Toolbox" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="inG-0b-px5" userLabel="View Controller - Proximity" customClass="NORProximityViewController" customModule="CAU_Toolbox" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="j78-X8-AIK"/>
                         <viewControllerLayoutGuide type="bottom" id="oVw-q8-EFX"/>
@@ -2605,7 +2598,7 @@
         <!--View Controller - RSC-->
         <scene sceneID="DOf-c9-t36">
             <objects>
-                <viewController id="ajK-NB-gff" userLabel="View Controller - RSC" customClass="NORRSCViewController" customModule="nRF_Toolbox" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ajK-NB-gff" userLabel="View Controller - RSC" customClass="NORRSCViewController" customModule="CAU_Toolbox" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ych-oZ-ccR"/>
                         <viewControllerLayoutGuide type="bottom" id="XvU-lX-1Eh"/>
@@ -2900,7 +2893,7 @@
         <!--View Controller - HTM-->
         <scene sceneID="6kq-oM-g6K">
             <objects>
-                <viewController id="Rl2-Gx-bqg" userLabel="View Controller - HTM" customClass="NORHTSViewController" customModule="nRF_Toolbox" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Rl2-Gx-bqg" userLabel="View Controller - HTM" customClass="NORHTSViewController" customModule="CAU_Toolbox" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="t05-QY-RWo"/>
                         <viewControllerLayoutGuide type="bottom" id="waP-8E-Prg"/>
@@ -3063,7 +3056,7 @@
         <!--Select Device-->
         <scene sceneID="AiV-hG-UJL">
             <objects>
-                <viewController id="Day-ms-bMb" customClass="NORScannerViewController" customModule="nRF_Toolbox" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Day-ms-bMb" customClass="NORScannerViewController" customModule="CAU_Toolbox" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wkE-vh-Vz2"/>
                         <viewControllerLayoutGuide type="bottom" id="0dm-fJ-y1l"/>
@@ -3182,7 +3175,7 @@
         <!--App Files-->
         <scene sceneID="VAc-1S-DVb">
             <objects>
-                <viewController id="t2a-Jq-CNK" customClass="NORAppFilesViewController" customModule="nRF_Toolbox" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="t2a-Jq-CNK" customClass="NORAppFilesViewController" customModule="CAU_Toolbox" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vw1-fM-SGG"/>
                         <viewControllerLayoutGuide type="bottom" id="6bc-ae-2rI"/>
@@ -3245,7 +3238,7 @@
         <!--Folder Files View Controller-->
         <scene sceneID="nro-W8-4UN">
             <objects>
-                <viewController modalTransitionStyle="flipHorizontal" id="4bI-af-War" customClass="NORFolderFilesViewController" customModule="nRF_Toolbox" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="flipHorizontal" id="4bI-af-War" customClass="NORFolderFilesViewController" customModule="CAU_Toolbox" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yqK-UU-3UH"/>
                         <viewControllerLayoutGuide type="bottom" id="LAI-AV-fjR"/>
@@ -3349,7 +3342,7 @@
         <!--How to create Distribution packet (ZIP)?-->
         <scene sceneID="Zul-pa-kwN">
             <objects>
-                <viewController id="h5f-4T-1jh" customClass="NORTutorialViewController" customModule="nRF_Toolbox" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="h5f-4T-1jh" customClass="NORTutorialViewController" customModule="CAU_Toolbox" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vTG-bK-7Ix"/>
                         <viewControllerLayoutGuide type="bottom" id="gQV-dN-so6"/>
@@ -3362,7 +3355,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kZB-0R-CUC">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="580.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="580"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is a Distribution packet (ZIP)?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Els-5C-clH">
                                                 <rect key="frame" x="16" y="16" width="343" height="21"/>
@@ -3388,27 +3381,27 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How to create a Distribution packet (ZIP)?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zni-ak-bps">
-                                                <rect key="frame" x="16" y="300.5" width="343" height="21"/>
+                                                <rect key="frame" x="16" y="300.5" width="343" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gf4-Gb-NxI">
-                                                <rect key="frame" x="16" y="337.5" width="343" height="81.5"/>
+                                                <rect key="frame" x="16" y="337" width="343" height="81.5"/>
                                                 <string key="text">To create a Distribution packet use the 'nrfutil' application. You may find it, as well as some documentation how to use it on GitHub:</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cWF-vT-awt">
-                                                <rect key="frame" x="16" y="435" width="343" height="30"/>
+                                                <rect key="frame" x="16" y="434.5" width="343" height="30"/>
                                                 <state key="normal" title="https://github.com/NordicSemiconductor/pc-nrfutil"/>
                                                 <connections>
                                                     <action selector="openURLButtonTapped:" destination="h5f-4T-1jh" eventType="touchUpInside" id="VL5-yz-8an"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5QN-tc-q3p">
-                                                <rect key="frame" x="16" y="481" width="343" height="81.5"/>
+                                                <rect key="frame" x="16" y="480.5" width="343" height="81.5"/>
                                                 <string key="text">It is available as a Python script, or as a standalone executable for Windows, installed together with the Master Control Panel application.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -3571,7 +3564,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hdH-6J-fRO">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="750"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="770"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. Connect your device with a computer using the cable." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jxw-5H-2RW">
                                                 <rect key="frame" x="16" y="16" width="343" height="41"/>
@@ -3586,45 +3579,45 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2. In iTunes select your device and then Apps:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="akn-nB-zAG">
-                                                <rect key="frame" x="16" y="130" width="343" height="21"/>
+                                                <rect key="frame" x="16" y="130" width="343" height="41"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="itunes_1" translatesAutoresizingMaskIntoConstraints="NO" id="QIx-VP-ZeK">
-                                                <rect key="frame" x="111.5" y="167" width="152" height="141"/>
+                                                <rect key="frame" x="111.5" y="187" width="152" height="141"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="152" id="P8O-nC-4tT"/>
                                                     <constraint firstAttribute="height" constant="141" id="ph2-yx-azd"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3. Scroll down the content to the File Sharing section:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wvj-aQ-h0H">
-                                                <rect key="frame" x="16" y="324" width="343" height="41"/>
+                                                <rect key="frame" x="16" y="344" width="343" height="41"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="itunes_2" translatesAutoresizingMaskIntoConstraints="NO" id="t8F-59-hPK">
-                                                <rect key="frame" x="47.5" y="381" width="281" height="178"/>
+                                                <rect key="frame" x="47" y="401" width="281" height="178"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="178" id="3eM-qS-VHt"/>
                                                     <constraint firstAttribute="width" constant="281" id="mf6-Du-nEc"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4. Select the nRF Toolbox application (see above)." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9kp-gl-mat">
-                                                <rect key="frame" x="16" y="575" width="343" height="41"/>
+                                                <rect key="frame" x="16" y="595" width="343" height="41"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5. Use the Add button or drag your files onto the documents pane." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i7n-uw-YmE">
-                                                <rect key="frame" x="16" y="632" width="343" height="41"/>
+                                                <rect key="frame" x="16" y="652" width="343" height="41"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6. To make the new files visible in the app  reopen the Select File dialog." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m6t-mZ-fxO">
-                                                <rect key="frame" x="16" y="689" width="343" height="41"/>
+                                                <rect key="frame" x="16" y="709" width="343" height="41"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -3700,55 +3693,55 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ic2-Le-HpT">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1286"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1285"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. Open your e-mail with attachment:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D8l-LJ-GAX">
-                                                <rect key="frame" x="16" y="16" width="343" height="21"/>
+                                                <rect key="frame" x="16" y="16" width="343" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="email_1" translatesAutoresizingMaskIntoConstraints="NO" id="8Mb-BE-PmW">
-                                                <rect key="frame" x="76.5" y="53" width="223" height="389"/>
+                                                <rect key="frame" x="76" y="52.5" width="223" height="389"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="389" id="Qeu-4h-OPI"/>
                                                     <constraint firstAttribute="width" constant="223" id="rlW-eW-zdg"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2. Long click the HEX or ZIP file. A dialog will pop up:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pvl-vQ-3Gi">
-                                                <rect key="frame" x="16" y="458" width="343" height="41"/>
+                                                <rect key="frame" x="16" y="457.5" width="343" height="41"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="email_2" translatesAutoresizingMaskIntoConstraints="NO" id="ujG-vq-V7q">
-                                                <rect key="frame" x="76.5" y="515" width="223" height="389"/>
+                                                <rect key="frame" x="76" y="514.5" width="223" height="389"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="389" id="64Y-if-wjq"/>
                                                     <constraint firstAttribute="width" constant="223" id="QIJ-U6-7IN"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3. Select Copy to nRF Toolbox." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ljK-wM-B4W">
-                                                <rect key="frame" x="16" y="920" width="343" height="21"/>
+                                                <rect key="frame" x="16" y="919.5" width="343" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4. The nRF Toolbox application will launch. Tap Select File button and switch to the User Files tab:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XhB-Ym-HrR">
-                                                <rect key="frame" x="16" y="957" width="343" height="61"/>
+                                                <rect key="frame" x="16" y="956" width="343" height="61"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="email_3" translatesAutoresizingMaskIntoConstraints="NO" id="5te-5i-QSC">
-                                                <rect key="frame" x="76.5" y="1034" width="223" height="175"/>
+                                                <rect key="frame" x="76" y="1033" width="223" height="175"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="223" id="UHm-v5-BJl"/>
                                                     <constraint firstAttribute="height" constant="175" id="Uwg-57-PIH"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5. A new Inbox folder will appear on the list. Find your new file inside." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="npu-gk-YX6">
-                                                <rect key="frame" x="16" y="1225" width="343" height="41"/>
+                                                <rect key="frame" x="16" y="1224" width="343" height="41"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -3807,7 +3800,7 @@
         <!--View Controller - UART-->
         <scene sceneID="bnf-jV-dRu">
             <objects>
-                <viewController title="UART" id="H5O-PI-o2R" userLabel="View Controller - UART" customClass="NORUARTViewController" customModule="nRF_Toolbox" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="UART" id="H5O-PI-o2R" userLabel="View Controller - UART" customClass="NORUARTViewController" customModule="CAU_Toolbox" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jgg-TP-yPU"/>
                         <viewControllerLayoutGuide type="bottom" id="Ryt-xg-sxE"/>
@@ -3839,7 +3832,7 @@
                                 <color key="textColor" red="0.66666666666666663" green="0.6705882352941176" blue="0.68627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackgroundTitle" translatesAutoresizingMaskIntoConstraints="NO" id="dNV-OE-SiU">
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackgroundTitle" translatesAutoresizingMaskIntoConstraints="NO" id="dNV-OE-SiU">
                                 <rect key="frame" x="127.5" y="645" width="120" height="14"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="14" id="Hvf-IO-69C"/>
@@ -4031,7 +4024,7 @@
         <!--Log View Controller-->
         <scene sceneID="zCT-Jj-SHk">
             <objects>
-                <viewController id="y8v-dl-m9e" customClass="NORLogViewController" customModule="nRF_Toolbox" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="y8v-dl-m9e" customClass="NORLogViewController" customModule="CAU_Toolbox" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gGh-tz-uAz"/>
                         <viewControllerLayoutGuide type="bottom" id="UVe-gL-dMR"/>
@@ -4044,7 +4037,7 @@
                                 <rect key="frame" x="0.0" y="66" width="315" height="601"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="LogItem" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="logCell" rowHeight="25" id="ruC-cJ-Ur7" customClass="NORLogItemTableViewCell" customModule="nRF_Toolbox" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="LogItem" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="logCell" rowHeight="25" id="ruC-cJ-Ur7" customClass="NORLogItemTableViewCell" customModule="CAU_Toolbox" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="22" width="315" height="25"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ruC-cJ-Ur7" id="YOG-TB-x9u">
@@ -4160,7 +4153,7 @@
         <!--Edit Popup View Controller-->
         <scene sceneID="E82-2D-Kfc">
             <objects>
-                <viewController storyboardIdentifier="StoryboardIDEditPopup" id="6Px-f6-4un" customClass="NOREditPopupViewController" customModule="nRF_Toolbox" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StoryboardIDEditPopup" id="6Px-f6-4un" customClass="NOREditPopupViewController" customModule="CAU_Toolbox" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WRC-mw-Bwt"/>
                         <viewControllerLayoutGuide type="bottom" id="0jF-Ae-TOl"/>
@@ -4464,7 +4457,7 @@
         <!--UART-->
         <scene sceneID="o7H-iQ-Ybv">
             <objects>
-                <viewController id="0VH-j9-Lgb" customClass="NORUARTRevealViewController" customModule="nRF_Toolbox" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="0VH-j9-Lgb" customClass="NORUARTRevealViewController" customModule="CAU_Toolbox" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5h4-ru-TOc"/>
                         <viewControllerLayoutGuide type="bottom" id="iPg-kE-lPv"/>
@@ -4475,7 +4468,7 @@
                         <color key="backgroundColor" red="0.96067994830000003" green="0.96084433790000001" blue="0.96066969629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="UART" id="9gz-1j-WHs">
-                        <barButtonItem key="rightBarButtonItem" image="ic_info" landscapeImage="ic_info" id="QCa-Fq-ZKg" userLabel="About">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" image="ic_info" landscapeImage="ic_info" id="QCa-Fq-ZKg" userLabel="About">
                             <connections>
                                 <action selector="aboutButtonTapped:" destination="0VH-j9-Lgb" id="JbY-bb-OsX"/>
                             </connections>
@@ -4513,7 +4506,7 @@
         <!--ViewController - HK-->
         <scene sceneID="9th-2n-jLw">
             <objects>
-                <viewController id="Mk7-F6-tao" userLabel="ViewController - HK" customClass="NORHKViewController" customModule="nRF_Toolbox" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Mk7-F6-tao" userLabel="ViewController - HK" customClass="NORHKViewController" customModule="CAU_Toolbox" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xWo-2N-9b3"/>
                         <viewControllerLayoutGuide type="bottom" id="oGp-kZ-EiS"/>
@@ -4523,7 +4516,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HIE-tz-eLX">
-                                <rect key="frame" x="106.5" y="473" width="163" height="48"/>
+                                <rect key="frame" x="106" y="473" width="163" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="DOe-sX-J09"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="163" id="mwH-Cd-h8Z"/>
@@ -4666,7 +4659,7 @@
         <!--View Controller - CBGM-->
         <scene sceneID="m7x-mS-y3M">
             <objects>
-                <viewController id="5Ta-i6-8fT" userLabel="View Controller - CBGM" customClass="NORCGMViewController" customModule="nRF_Toolbox" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="5Ta-i6-8fT" userLabel="View Controller - CBGM" customClass="NORCGMViewController" customModule="CAU_Toolbox" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ZEW-67-jIS"/>
                         <viewControllerLayoutGuide type="bottom" id="I6S-HN-ZJm"/>
@@ -4743,7 +4736,7 @@
                                 <color key="separatorColor" red="0.73333334920000004" green="0.74117648599999997" blue="0.75294119120000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CGMCell" id="Lsc-ay-09r" userLabel="CBGMCell" customClass="NORCGMItemCell" customModule="nRF_Toolbox" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CGMCell" id="Lsc-ay-09r" userLabel="CBGMCell" customClass="NORCGMItemCell" customModule="CAU_Toolbox" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="22" width="310" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Lsc-ay-09r" id="5v4-4C-7zK">
@@ -4895,7 +4888,7 @@
         <!--CGM Reading details-->
         <scene sceneID="Bq8-UE-fM1">
             <objects>
-                <viewController title="CGM Reading details" id="mrg-v0-oyG" customClass="NORCGMDetailsViewController" customModule="nRF_Toolbox" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="CGM Reading details" id="mrg-v0-oyG" customClass="NORCGMDetailsViewController" customModule="CAU_Toolbox" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0Wp-ul-jlX"/>
                         <viewControllerLayoutGuide type="bottom" id="dgD-as-0eG"/>
@@ -5290,7 +5283,7 @@
         <!--Select Accessory-->
         <scene sceneID="LrB-yP-pbD">
             <objects>
-                <viewController title="Select Accessory" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="currentContext" id="reO-Ti-6rK" customClass="NORHKScannerViewController" customModule="nRF_Toolbox" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Select Accessory" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="currentContext" id="reO-Ti-6rK" customClass="NORHKScannerViewController" customModule="CAU_Toolbox" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="65S-P3-n8u"/>
                         <viewControllerLayoutGuide type="bottom" id="vMs-ZA-vJp"/>
@@ -5389,7 +5382,7 @@
         <!--Accessory Info-->
         <scene sceneID="rdq-tR-Tkg">
             <objects>
-                <viewController title="Accessory Info" automaticallyAdjustsScrollViewInsets="NO" id="Pe3-Ug-J4P" customClass="NORHKAccessoryViewController" customModule="nRF_Toolbox" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Accessory Info" automaticallyAdjustsScrollViewInsets="NO" id="Pe3-Ug-J4P" customClass="NORHKAccessoryViewController" customModule="CAU_Toolbox" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eLO-Mf-0Am"/>
                         <viewControllerLayoutGuide type="bottom" id="7KJ-L1-x2A"/>
@@ -5651,7 +5644,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="BackgroundTitle" width="120" height="11"/>
+        <image name="BackgroundTitle" width="120" height="11.5"/>
         <image name="Battery" width="39" height="19"/>
         <image name="ConnectButton" width="163" height="48"/>
         <image name="ConnectButtonPressed" width="163" height="48"/>
@@ -6342,19 +6335,19 @@ AAAAAAAAAgEAAAAAAAAAWQAAAAAAAAAAAAAAAAAAlrY
         <image name="closelock" width="170" height="135"/>
         <image name="email_1" width="335" height="583"/>
         <image name="email_2" width="335" height="583"/>
-        <image name="email_3" width="335" height="262"/>
+        <image name="email_3" width="335" height="262.5"/>
         <image name="filesHelp" width="60" height="60"/>
         <image name="folderEmpty" width="64" height="64"/>
         <image name="ic_info" width="24" height="24"/>
-        <image name="itunes_1" width="152" height="141"/>
+        <image name="itunes_1" width="152" height="141.5"/>
         <image name="itunes_2" width="421" height="267"/>
         <image name="openlock" width="170" height="135"/>
         <image name="scanning" width="64" height="64"/>
-        <image name="toolbar_shadow" width="2" height="7"/>
+        <image name="toolbar_shadow" width="2.5" height="7.5"/>
         <image name="userIcon" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="eeF-P4-72I"/>
+        <segue reference="nX1-cs-GXT"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.60392159219999997" blue="0.85490196939999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
