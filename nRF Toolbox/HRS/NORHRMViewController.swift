@@ -38,6 +38,25 @@ fileprivate func >= <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
   }
 }
 
+class MFSPacket {
+    internal init() {
+        self.type = 0
+        self.length = 0
+        self.timestamp = 0
+        self.adc = [[Int16]](repeating: [Int16](repeating:0, count:8), count: 8)
+        self.reserved = [UInt8](repeating:0, count: 8)
+        self.seq = 0
+        self.tail = 0
+    }
+    
+    var type : UInt8
+    var length : UInt8
+    var timestamp : UInt16
+    var adc : [[Int16]]
+    var reserved : [UInt8]
+    var seq : UInt32
+    var tail : UInt32
+}
 
 class NORHRMViewController: NORBaseViewController, CBCentralManagerDelegate, CBPeripheralDelegate, NORScannerDelegate, CPTPlotDataSource, CPTPlotSpaceDelegate {
 
@@ -56,12 +75,18 @@ class NORHRMViewController: NORBaseViewController, CBCentralManagerDelegate, CBP
     var isBackButtonPressed             : Bool?
     var batteryServiceUUID              : CBUUID
     var batteryLevelCharacteristicUUID  : CBUUID
+    var uartServiceUUID                 : CBUUID
+    var uartRXCharacteristicUUID        : CBUUID
+    var uartTXCharacteristicUUID        : CBUUID
     var hrServiceUUID                   : CBUUID
     var hrMeasurementCharacteristicUUID : CBUUID
     var hrLocationCharacteristicUUID    : CBUUID
     var linePlot                        : CPTScatterPlot?
     var graph                           : CPTGraph?
     var peripheral                      : CBPeripheral?
+    
+    fileprivate var uartRXCharacteristic        : CBCharacteristic?
+    fileprivate var uartTXCharacteristic        : CBCharacteristic?
     
     //MARK: - UIVIewController Outlets
     @IBOutlet weak var verticalLabel: UILabel!
@@ -84,6 +109,9 @@ class NORHRMViewController: NORBaseViewController, CBCentralManagerDelegate, CBP
     }
     //MARK: - UIViewController delegate
     required init?(coder aDecoder: NSCoder) {
+        uartServiceUUID                  = CBUUID(string: NORServiceIdentifiers.uartServiceUUIDString)
+        uartRXCharacteristicUUID         = CBUUID(string: NORServiceIdentifiers.uartRXCharacteristicUUIDString)
+        uartTXCharacteristicUUID         = CBUUID(string: NORServiceIdentifiers.uartTXCharacteristicUUIDString)
         hrServiceUUID                    = CBUUID(string: NORServiceIdentifiers.hrsServiceUUIDString)
         hrMeasurementCharacteristicUUID  = CBUUID(string: NORServiceIdentifiers.hrsHeartRateCharacteristicUUIDString)
         hrLocationCharacteristicUUID     = CBUUID(string: NORServiceIdentifiers.hrsSensorLocationCharacteristicUUIDString)
@@ -168,7 +196,7 @@ class NORHRMViewController: NORBaseViewController, CBCentralManagerDelegate, CBP
         xAxis?.minorTicksPerInterval = 4;
         xAxis?.minorTickLength = 5;
         xAxis?.majorTickLength = 7;
-        xAxis?.title = "Time (s)"
+        xAxis?.title = "Signal Width(s)"
         xAxis?.titleOffset = 25;
         xAxis?.labelFormatter = axisLabelFormatter
         
@@ -178,8 +206,8 @@ class NORHRMViewController: NORBaseViewController, CBCentralManagerDelegate, CBP
         yAxis?.minorTicksPerInterval = 4
         yAxis?.minorTickLength = 5
         yAxis?.majorTickLength = 7
-        yAxis?.title = "BPM"
-        yAxis?.titleOffset = 30
+        yAxis?.title = "ECGRaw"
+        yAxis?.titleOffset = 40
         yAxis?.labelFormatter = axisLabelFormatter
         
         
@@ -190,8 +218,8 @@ class NORHRMViewController: NORBaseViewController, CBCentralManagerDelegate, CBP
         
         //set line plot style
         let lineStyle = linePlot?.dataLineStyle!.mutableCopy() as! CPTMutableLineStyle
-        lineStyle.lineWidth = 2
-        lineStyle.lineColor = CPTColor.black()
+        lineStyle.lineWidth = 1
+        lineStyle.lineColor = CPTColor.blue()
         linePlot!.dataLineStyle = lineStyle;
         
         let symbolLineStyle = CPTMutableLineStyle(style: lineStyle)
@@ -199,7 +227,7 @@ class NORHRMViewController: NORBaseViewController, CBCentralManagerDelegate, CBP
         let symbol = CPTPlotSymbol.ellipse()
         symbol.fill = CPTFill(color: CPTColor.black())
         symbol.lineStyle = symbolLineStyle
-        symbol.size = CGSize(width: 3.0, height: 3.0)
+        symbol.size = CGSize(width: 0.5, height: 0.5)
         linePlot?.plotSymbol = symbol;
         
         //set graph grid lines
@@ -211,12 +239,12 @@ class NORHRMViewController: NORBaseViewController, CBCentralManagerDelegate, CBP
     }
     
     func resetPlotRange() {
-        plotXMaxRange = 121
-        plotXMinRange = -1
-        plotYMaxRange = 310
-        plotYMinRange = -1
-        plotXInterval = 20
-        plotYInterval = 50
+        plotXMaxRange = 5
+        plotXMinRange = 0
+        plotYMaxRange = 4000
+        plotYMinRange = 0
+        plotXInterval = 1
+        plotYInterval = 500
          
         let plotSpace = graph?.defaultPlotSpace as! CPTXYPlotSpace
         plotSpace.xRange = CPTPlotRange(location: NSNumber(value: plotXMinRange!), length: NSNumber(value: plotXMaxRange!))
@@ -238,9 +266,17 @@ class NORHRMViewController: NORBaseViewController, CBCentralManagerDelegate, CBP
     }
     
     func addHRvalueToGraph(data value: Int) {
+        if (hrValues?.count >= 1000) {
+            //hrValues?.remove(hrValues?.firstObject)
+            hrValues?.remove(hrValues?.firstObject)
+        }
+        
+        if (xValues?.count >= 1000) {
+            xValues?.remove(xValues?.firstObject)
+        }
+        
         // In this method the new value is added to hrValues array
         hrValues?.add(NSDecimalNumber(value: value as Int))
-        
         // Also, we save the time when the data was received
         // 'Last' and 'previous' values are timestamps of those values. We calculate them to know whether we should automatically scroll the graph
         var lastValue : NSDecimalNumber
@@ -258,12 +294,15 @@ class NORHRMViewController: NORBaseViewController, CBCentralManagerDelegate, CBP
         xValues?.add(NORHRMViewController.longUnixEpoch())
         lastValue  = xValues?.lastObject as! NSDecimalNumber
         firstValue = xValues?.firstObject as! NSDecimalNumber
-        let last : Double = lastValue.subtracting(firstValue).doubleValue
+        var last : Double = lastValue.subtracting(firstValue).doubleValue
         
         // Here we calculate the max value visible on the graph
         let plotSpace = graph!.defaultPlotSpace as! CPTXYPlotSpace
         let max = plotSpace.xRange.locationDouble + plotSpace.xRange.lengthDouble
         
+        if last > 10 {
+            last = 10
+        }
         if last > max && previous <= max {
             let location = Int(last) - plotXMaxRange! + 1
             plotSpace.xRange = CPTPlotRange(location: NSNumber(value: (location)), length: NSNumber(value: plotXMaxRange!))
@@ -368,7 +407,7 @@ class NORHRMViewController: NORBaseViewController, CBCentralManagerDelegate, CBP
         NotificationCenter.default.addObserver(self, selector: #selector(NORHRMViewController.appDidBecomeActiveCallback), name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
         
         // Peripheral has connected. Discover required services
-        peripheral.discoverServices([hrServiceUUID, batteryServiceUUID])
+        peripheral.discoverServices([uartServiceUUID, hrServiceUUID, batteryServiceUUID])
     }
     
     func centralManager(_ central: CBCentralManager, didFailToConnect peripheral: CBPeripheral, error: Error?) {
@@ -409,6 +448,9 @@ class NORHRMViewController: NORBaseViewController, CBCentralManagerDelegate, CBP
             if aService.uuid.isEqual(hrServiceUUID){
                 print("HRM Service found")
                 peripheral.discoverCharacteristics(nil, for: aService)
+            } else if aService.uuid.isEqual(uartServiceUUID){
+                print("UART Service found")
+                peripheral.discoverCharacteristics(nil, for: aService)
             } else if aService.uuid.isEqual(batteryServiceUUID) {
               print("Battery service found")
                 peripheral.discoverCharacteristics(nil, for: aService)
@@ -427,11 +469,27 @@ class NORHRMViewController: NORBaseViewController, CBCentralManagerDelegate, CBP
             for aCharactersistic : CBCharacteristic in service.characteristics! {
                 if aCharactersistic.uuid.isEqual(hrMeasurementCharacteristicUUID) {
                     print("Heart rate measurement characteristic found")
-                    peripheral.setNotifyValue(true, for: aCharactersistic)
+                    //peripheral.setNotifyValue(true, for: aCharactersistic)
                 }else if aCharactersistic.uuid.isEqual(hrLocationCharacteristicUUID) {
                     print("Heart rate sensor location characteristic found")
                     peripheral.readValue(for: aCharactersistic)
                 }
+            }
+        } else if service.uuid.isEqual(uartServiceUUID) {
+            for aCharacteristic : CBCharacteristic in service.characteristics! {
+                if aCharacteristic.uuid.isEqual(uartRXCharacteristicUUID) {
+                    print("UART RX characteristic found")
+                    peripheral.setNotifyValue(true, for: aCharacteristic)
+                    uartRXCharacteristic = aCharacteristic;
+                } else if aCharacteristic.uuid.isEqual(uartTXCharacteristicUUID) {
+                    print("UART TX characteristic found")
+                    peripheral.setNotifyValue(true, for: aCharacteristic)
+                    uartTXCharacteristic = aCharacteristic;
+                }
+            }
+            //Enable notifications on TX Characteristic
+            if (uartTXCharacteristic != nil && uartRXCharacteristic != nil) {
+                peripheral.setNotifyValue(true, for: uartTXCharacteristic!)
             }
         } else if service.uuid.isEqual(batteryServiceUUID) {
             for aCharacteristic : CBCharacteristic in service.characteristics! {
@@ -466,7 +524,21 @@ class NORHRMViewController: NORBaseViewController, CBCentralManagerDelegate, CBP
                 if self.battery.tag == 0 {
                     if characteristic.properties.rawValue & CBCharacteristicProperties.notify.rawValue > 0 {
                        self.battery.tag = 1 // Mark that we have enabled notifications
-                       peripheral.setNotifyValue(true, for: characteristic)
+                       // peripheral.setNotifyValue(true, for: characteristic)
+                    }
+                }
+            } else {
+                guard error == nil else {
+                    return
+                }
+                // try to print a friendly string of received bytes if they can be parsed as UTF8
+                guard let bytesReceived = characteristic.value else {
+                    return
+                }
+                bytesReceived.withUnsafeBytes { (utf8Bytes: UnsafePointer<CChar>) in
+                    let value = self.decodeECGValue(withData: characteristic.value!)
+                    for i in 0..<8{
+                        self.addHRvalueToGraph(data: Int(value.adc[i][7]))
                     }
                 }
             }
@@ -517,6 +589,31 @@ class NORHRMViewController: NORBaseViewController, CBCentralManagerDelegate, CBP
             bpmValue = Int(UInt16(array[2] * 0xFF) + UInt16(array[1]))
         }
         return bpmValue
+    }
+    
+    func decodeECGValue(withData data: Data) -> MFSPacket {
+        let count = data.count / MemoryLayout<UInt8>.size
+        let packet = MFSPacket()
+        
+        var array = [UInt8](repeating: 0, count: count)
+        (data as NSData).getBytes(&array, length: count * MemoryLayout<UInt8>.size)
+        // SHOULD CHANGE CONSTANTS TO PROPERTIES
+        packet.type = UInt8(array[0])
+        packet.length = UInt8(array[1])
+        // Big to Little Endian
+        packet.timestamp = UInt16(array[2]) | UInt16(array[3]) << 8
+        var r=0,c=0
+        for i in 4..<(array.count-16) {
+            if (i%2==1) {
+                packet.adc[r][c] = Int16(array[i-1]) | Int16(array[i]) << 8
+                c += 1
+                if (c%8==0) {
+                    r += 1
+                    c = 0
+                }
+            }
+        }
+        return packet
     }
     
     func decodeHRLocation(withData data:Data) -> String {
